@@ -18,10 +18,10 @@ I might have missed some points. If you find some missing content, I would like 
 
 ## Chapters
 
-1. Fundamentals of Asynchronous Coding
-2. Introduction to Asynchronous Coding in Javascript
-3. Sending Asynchronous Network Requests
-4. Understanding and Implementing Promises
+1. [Fundamentals of Asynchronous Coding](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/tree/chapter-1)
+2. [Introduction to Asynchronous Coding in Javascript](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/tree/chapter-2)
+3. [Sending Asynchronous Network Requests](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/tree/chapter-3)
+4. [Understanding and Implementing Promises](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/tree/chapter-4)
 
 ## License
 
