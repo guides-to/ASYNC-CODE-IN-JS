@@ -15,6 +15,7 @@ I might have missed some points. If you find some missing content, I would like 
 
 1. HTML
 2. Javascript basics
+3. JQuery
 
 ## Chapters
 
