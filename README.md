@@ -17,7 +17,9 @@ In case of synchronous execution, all the code run sequentially, and in case of 
 
 The events are building blocks of asynchronous programing in the js. They can be **listened** and **fired** by the target element
 
-The very basic implementation of events can be seen [here]()
+The very basic implementation of events can be seen [here](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/blob/chapter-1/codes/basics-event.html).
+
+**NOTE :** You can also send data by creating an [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent), as demonstrated [here](ttps://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/blob/chapter-1/codes/data-driven-events.html)
 
 ## Callbacks / Listeners
 
@@ -26,12 +28,14 @@ The very basic implementation of events can be seen [here]()
 
 <p style="text-align: center"><img src="https://miro.medium.com/max/1600/1*iHhUyO4DliDwa6x_cO5E3A.gif"></p>
 
-## Applications of Asynchronous Coding
-
 ## Features of Asynchronous Coding
 
-## When to Use Asynchronous Coding
+- **increase** the **performance and responsiveness** of your application
+- **non blocking** io operations
 
 ## External Resource
 
--
+- [Learn HTML](https://www.w3schools.com/html/default.asp)
+- [Learn Javascript](https://www.w3schools.com/js/default.asp)
+- [More on Events](https://developer.mozilla.org/en-US/docs/Web/API/Event)
+- [Create Document Events](https://developer.mozilla.org/en-US/docs/Web/API/Document/createEvent)
