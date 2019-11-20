@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  </head>
+  <body>
+    <p id="hello"></p>
+    <p id="first"></p>
+    <script>
+      // creating event
+      let event = new Event("myEvent");
+      let elem = document.querySelector("#hello");
+
+      // adding event listner
+      elem.addEventListener("myEvent", () => {
+        // the callback function setting innerHTML of the element to "Hello World"
+        elem.innerHTML = "Hello World";
+      });
+
+      // finally firing the event
+      elem.dispatchEvent(event);
+
+      // it will be called first
+      document.querySelector("#first").innerHTML = "I will be called first";
+    </script>
+  </body>
+</html>
