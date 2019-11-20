@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  </head>
+  <body>
+    <p id="hello">Hello World</p>
+    <script>
+      // getting the target element
+      let elem = document.querySelector("#hello");
+
+      // this will be executed after 2 seconds
+      let id = setTimeout(() => {
+        elem.innerHTML = "This Text is Changed after 2 secs";
+      }, 2000);
+
+      // this will we executed first
+      elem.innerHTML += "!!";
+
+      // text will not be modified
+      clearTimeout(id);
+    </script>
+  </body>
+</html>

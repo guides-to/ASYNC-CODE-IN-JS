@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  </head>
+  <body>
+    <p id="hello">Hello World</p>
+    <ul id="list"></ul>
+    <script>
+      // getting the target element
+      let elem = document.querySelector("#list");
+      let i = 1;
+
+      // this will be executed after every 1 seconds
+      setInterval(() => {
+        // creating element
+        let li = document.createElement("li");
+        // setting innerHTML
+        li.innerHTML = i++;
+        // appending it to the parent element
+        elem.appendChild(li);
+      }, 1000);
+
+      // this peice will run firstly
+      let li = document.createElement("li");
+      li.innerHTML = 0;
+      elem.appendChild(li);
+    </script>
+  </body>
+</html>
