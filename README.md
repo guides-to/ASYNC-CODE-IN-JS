@@ -1,35 +1,45 @@
-# GUIDE TO ASYNC CODE IN JS
+# Sending Asynchronous Network Requests
 
-This is a practical guide on "**Asynchronous Coding in Javascript**". All the chapters and materials are contained within this repository.
+In this you will learn about sending HTTP requests asynchronously via `XHR`
 
-## Disclaimer
+## What is XHR
 
-I might have missed some points. If you find some missing content, I would like you to make contributions or create issues about the same
+- also called **`XMLHttpRequest`**
+- in-built object to handle all http requests
+- retrieve data from a URL without having to do a full page refresh
+- not an _AJAX_, but used in _AJAX_
 
-## Prerequisite Knowledge
+## Syntax of XHR
 
-1. Basics of Computer Science
-2. Javascript
+```js
+// instancing the object
+let xhr = new XMLHttpRequest();
 
-## What this course is not about
+xhr.onreadystatechange = function() {
+  // body will be executed whenever "readyState" property changes
+};
 
-1. HTML
-2. Javascript basics
-3. JQuery
+// Initializes a request
+xhr.open("HTTP REQUEST METHOD", "RESOURCE NAME");
 
-## Chapters
+// actually sending the request
+xhr.send("INCLUDE REQUEST BODY (IF ANY)");
+```
 
-1. [Fundamentals of Asynchronous Coding](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/tree/chapter-1)
-2. [Introduction to Asynchronous Coding in Javascript](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/tree/chapter-2)
-3. [Sending Asynchronous Network Requests](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/tree/chapter-3)
-4. [Understanding and Implementing Promises](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/tree/chapter-4)
+## Example on XHR
 
-## License
+1. [Basic XHR Application](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/blob/chapter-3/codes/basic-xhr.html)
+2. [Sending POST Data with XHR](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/blob/chapter-3/codes/post-xhr.html)
+3. [Sending with Custom Headers](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/blob/chapter-3/codes/sending-custom-headers.html)
 
-This repository is licensed under [GPL-v3](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/blob/master/LICENSE)
+## Making XHR Synchronous
 
-## Contact Information
+The **third** argument in `.open()` method accepts `true` or `false` to set / unset the synchronous flag. By default, it `false`
 
-Email: tbhaxor@gmail.com <br>
-Linkedin: https://www.linkedin.com/in/gurkirat--singh/ <br>
-Twitter: @tbhaxor
+[Here](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/blob/chapter-3/codes/synchronous-xhr.html) is an example of synchronous request
+
+## External Resource
+
+- [XHR Properties](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#Properties)
+- [XHR Response](https://www.w3schools.com/xml/ajax_xmlhttprequest_response.asp)
+- [AJAX Programming](https://developer.mozilla.org/en-US/docs/Glossary/AJAX)
