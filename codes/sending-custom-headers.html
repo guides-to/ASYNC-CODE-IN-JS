@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  </head>
+  <body>
+    <pre id="ctx"></pre>
+
+    <script>
+      // only for debug purpose
+      document.onreadystatechange = function() {
+        console.log("DOM " + this.readyState);
+      };
+
+      // setting up the
+      let xhr = new XMLHttpRequest();
+
+      // getting the context
+      let ctx = document.querySelector("#ctx");
+
+      // listening for readyState change
+      xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          // debug log
+          console.log("response is ready");
+
+          // populating the data
+          ctx.innerText = this.responseText;
+        }
+      };
+
+      // initializing the XHR
+      xhr.open("POST", "https://httpbin.org/post");
+
+      // setting headers
+      // you can't set them before opening the XHR
+      xhr.setRequestHeader("MY_HEADER1", "MY_VAL1");
+      xhr.setRequestHeader("MY_HEADER2", "MY_VAL2");
+
+      // sending XHR with POST
+      xhr.send("name=test&password=12345");
+
+      // only for debug
+      console.log("this will be printed first of all");
+    </script>
+  </body>
+</html>

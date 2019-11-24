@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  </head>
+  <body>
+    <pre id="ctx"></pre>
+    <!-- requiring the jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+      // waiting for document to ready
+      $(document).ready(() => {
+        // making formdata from js object
+        let data = $.param({
+          name: "Gurkirat",
+          age: 21,
+          email: "tbhaxor@gmail.com"
+        });
+
+        // sending post
+        $.post(
+          // on this url
+          "https://httpbin.org/post",
+          // with this data
+          data,
+          // adding the listener
+          data => {
+            // populating the context
+            $("#ctx").text(data);
+          },
+          "text" // types accepted (xml, json, script, text, html)
+        );
+      });
+    </script>
+  </body>
+</html>

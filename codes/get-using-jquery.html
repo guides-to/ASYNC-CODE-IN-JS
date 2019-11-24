@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  </head>
+  <body>
+    <p>
+      <strong>Name:&nbsp;</strong>
+      <span id="name"></span>
+    </p>
+
+    <p>
+      <strong>Email:&nbsp;</strong>
+      <span id="email"></span>
+    </p>
+
+    <p>
+      <strong>Website:&nbsp;</strong>
+      <span id="website"></span>
+    </p>
+    <!-- requiring the jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script>
+      // when document is ready
+      $(document).ready(() => {
+        // sending the request
+        $.get("https://jsonplaceholder.typicode.com/users/1", data => {
+          // populating the data
+          $("#name").text(data.name);
+          $("#email").text(data.email);
+          $("#website").text(data.website);
+        })
+          // handling failures
+          .fail(reason => {
+            console.warn(reason);
+          })
+          // handling success
+          .done(() => {
+            console.log("Success");
+          });
+      });
+    </script>
+  </body>
+</html>

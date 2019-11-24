@@ -1,0 +1,78 @@
+<!-- USING CODE FROM "basic-xhr.html" -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      th {
+        padding: 7px 20px 7px 20px;
+      }
+      td {
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <table border="1" style="border-collapse: collapse;">
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td id="name"></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td id="email"></td>
+      </tr>
+      <tr>
+        <td>Website</td>
+        <td id="website"></td>
+      </tr>
+    </table>
+
+    <script>
+      // only for debug purpose
+      document.onreadystatechange = function() {
+        console.log("DOM " + this.readyState);
+      };
+
+      // getting the context to build
+      let website = document.querySelector("#website");
+      let email = document.querySelector("#email");
+      let name = document.querySelector("#name");
+
+      // instancing the XHR
+      let xhr = new XMLHttpRequest();
+
+      // listening to readyState change
+      xhr.onreadystatechange = function() {
+        // when readyState is 4 (complete and response is ready) and http response status is 200 (ok)
+        if (this.readyState == 4 && this.status == 200) {
+          // for debug
+          console.log("request completed");
+
+          // parsing the text response to JSON object
+          let resp = JSON.parse(this.responseText);
+
+          // actually building the context
+          website.innerHTML = resp.website;
+          name.innerHTML = resp.name;
+          email.innerHTML = resp.email;
+        }
+      };
+
+      // initializing the requesting
+      xhr.open("GET", "https://jsonplaceholder.typicode.com/users/1", false);
+
+      // sending the request
+      xhr.send();
+
+      // only for debug
+      console.log("this will be printed first of all");
+    </script>
+  </body>
+</html>

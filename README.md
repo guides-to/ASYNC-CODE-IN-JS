@@ -32,9 +32,22 @@ xhr.send("INCLUDE REQUEST BODY (IF ANY)");
 2. [Sending POST Data with XHR](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/blob/chapter-3/codes/post-xhr.html)
 3. [Sending with Custom Headers](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/blob/chapter-3/codes/sending-custom-headers.html)
 
+## Using JQuery to Send HTT Request
+
+- library to interact with dom
+- easy to use
+- methods/functions encapsulates many lines of code
+- website: https://jquery.com/
+- api documentation: https://api.jquery.com/
+
+Demonstration
+
+1. [Sending GET Request using JQuery](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/blob/chapter-3/codes/get-using-jquery.html)
+2. [Sending POST Request using JQuery](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/blob/chapter-3/codes/post-using-jquery.html)
+
 ## Making XHR Synchronous
 
-The **third** argument in `.open()` method accepts `true` or `false` to set / unset the synchronous flag. By default, it `false`
+The **third** argument in `.open()` method accepts `true` or `false` to set / unset the synchronous flag. By default, it `true`
 
 [Here](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/blob/chapter-3/codes/synchronous-xhr.html) is an example of synchronous request
 
