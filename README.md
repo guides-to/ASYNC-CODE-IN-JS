@@ -24,7 +24,8 @@ The very basic implementation of events can be seen [here](https://github.com/tb
 ## Callbacks / Listeners
 
 - also called responders
-- basically they are the functions that are executed when the event is fired
+- basically they are the functions that are executed after an event is fired
+- handles "**what to do when asynchronous execution is over**"
 
 <p style="text-align: center"><img src="https://miro.medium.com/max/1600/1*iHhUyO4DliDwa6x_cO5E3A.gif"></p>
 
