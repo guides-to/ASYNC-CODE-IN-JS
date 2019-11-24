@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  </head>
+
+  <body>
+    <script>
+      // function to do some task
+      function exec(num) {
+        return new Promise((resolve, reject) => {
+          resolve(num);
+        });
+      }
+
+      exec(0)
+        .then(val => {
+          // checking if number is zero
+          if (val == 0) {
+            // throwing new error
+            throw new Error("Divide By Zero");
+          } else {
+            return 100 / val;
+          }
+        })
+        .then(val => val + 10)
+        .then(val => val + 20)
+        .then(console.log)
+        // if error is thrown anywhere in then block, the execution will be pointed to the catch block
+        .catch(console.warn);
+    </script>
+  </body>
+</html>

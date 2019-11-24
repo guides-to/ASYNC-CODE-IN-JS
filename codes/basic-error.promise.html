@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      #error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="data">WAITING...</p>
+    <p id="error"></p>
+    <script>
+      let p = new Promise((resolve, reject) => {
+        reject("Some Error Occured");
+        resolve("Fulfilled");
+      });
+
+      // .then will not be executed
+      p.then(console.log).catch(reason => {
+        // populating the reason of error
+        document.querySelector("#error").innerHTML = reason;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  </head>
+  <body>
+    <p id="ctx"></p>
+    <p id="execution"></p>
+
+    <script>
+      // implementing the promise
+      let p = new Promise((resolve, reject) => {
+        // will change the content
+        document.querySelector("#execution").innerHTML =
+          "This will be executed as soon as Promise is implementd";
+
+        // the value to be sent is sent as the argument
+        resolve("Hello World"); // sent the fulfilled state
+        reject("This will not be executed"); // no affect
+        return "No affect"; // no affect
+      });
+
+      // handling the success
+      p.then(value => {
+        document.querySelector("#ctx").innerHTML = "MESSAGE: " + value;
+      }).catch(console.warn); // nothing will be logged
+    </script>
+  </body>
+</html>

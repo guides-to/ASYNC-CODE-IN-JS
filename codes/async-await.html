@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  </head>
+  <body>
+    <script>
+      // function returning
+      function wait(ms) {
+        // returning the promise
+        return new Promise((resolve, reject) => {
+          // if timeout is < 0
+          if (ms < 0) {
+            // reject
+            reject(new Error("Timeout can not be less than 0 ms"));
+          }
+
+          // resolve after ms milliseconds
+          setTimeout(() => {
+            resolve("Hello after " + ms + " milliseconds");
+          }, ms);
+        });
+      }
+
+      // IIFE "Async" function
+      (async () => {
+        // try catch block
+        try {
+          console.log("Started");
+          let msg1 = await wait(500); // getting the value of resolve
+          console.log(msg1); // printing value on consolve
+          let msg2 = await wait(100); // getting the value of resolve
+          console.log(msg2);
+          console.log("Will throw error now");
+          await wait(-1);
+        } catch (e) {
+          console.warn(e);
+        }
+      })();
+    </script>
+  </body>
+</html>

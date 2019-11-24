@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  </head>
+  <body>
+    <script>
+      // sending a GET request
+      fetch("https://jsonplaceholder.typicode.com/users/10")
+        // getting the response
+        .then(resp => {
+          console.log("Status", resp.status, resp.statusText);
+          return resp.json(); // getting the text and parsing it to json
+        })
+        // printing the body
+        .then(console.log)
+        //
+        .catch(console.warn);
+    </script>
+  </body>
+</html>

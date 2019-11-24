@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  </head>
+  <body>
+    <script>
+      // defining the fncn
+      function waitAndLog(time, message) {
+        // returning promise object
+        return new Promise((resolve, reject) => {
+          // running the executor
+          setTimeout(() => {
+            // fulfilling promise with a message
+            resolve(message);
+          }, time);
+        });
+      }
+
+      // four async functions
+      waitAndLog(1000, "I waited for 1000 ms").then(console.log);
+      waitAndLog(500, "I waited for 500 ms").then(console.log);
+      waitAndLog(2000, "I waited for 2000 ms").then(console.log);
+      waitAndLog(0, "I waited for 0 ms").then(console.log);
+
+      // one sync function
+      console.log("I didn't wait. LOL");
+    </script>
+  </body>
+</html>

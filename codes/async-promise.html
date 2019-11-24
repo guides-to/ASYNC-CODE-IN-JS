@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  </head>
+  <body>
+    <p id="status">Started</p>
+    <p id="ctx"></p>
+    <script>
+      // implementing the promise
+      let p = new Promise((resolve, reject) => {
+        // executor function, executing the settimeout
+        setTimeout(() => {
+          resolve("Hello World!! I just arrived");
+        }, 2000);
+      });
+
+      // not using catch, since we know it will be resolved
+      p.then(data => {
+        document.querySelector("#status").innerHTML = "Completed";
+        document.querySelector("#ctx").innerHTML = data;
+      });
+
+      // checking what does promise object contains
+      console.log(p);
+    </script>
+  </body>
+</html>

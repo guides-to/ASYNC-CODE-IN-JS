@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  </head>
+  <body>
+    <script>
+      // function to do some task
+      function exec(num) {
+        return new Promise((resolve, reject) => {
+          resolve(num);
+        });
+      }
+
+      // for n returns, you need n+1 then blocks
+      exec(10)
+        .then(val => 100 / val) // 1
+        .then(val => val + 10) // 2
+        .then(val => val + 20) // 3
+        .then(console.log) // 4
+        .catch(console.warn); // since there is no error, it will not be executed
+    </script>
+  </body>
+</html>
