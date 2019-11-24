@@ -11,15 +11,15 @@ This chapter will teach about you basic theory and applications of asynchronous
 
 Since javascript is a single-threaded langauge, it doesn't support parallel execution.
 
-In case of synchronous execution, all the code run sequentially, and in case of asynchronous programing all the (synchronous code runs at first) functions in **event-queue** are popped and executed in call stack, and then [callback](#Callbacks-/-Listeners) are called.
+In case of synchronous execution, all the code run sequentially, and in case of asynchronous programing all the (synchronous code runs at first) functions in **event-queue** are popped and executed in call stack, and then [callback](#callbacks--listeners) are called.
 
 <p style="text-align: center"><img src="https://www.programering.com/images/remote/ZnJvbT1jbmJsb2dzJnVybD1jbWJ3NVNPeGt6UXgwaVJDRlRURUIxWXpFekx4RVROd1FUTWo5eVp0bEdic0YyTHpSV1l2eEdjMTlTYnZObUxuNVdZajkyY2xSMmJqNXlkM2QzTHZvRGMwUkhh.jpg"></p>
 
-The events are building blocks of asynchronous programing in the js. They can be **listened** and **fired** by the target element
+The **events** are building blocks of asynchronous programing in the javascrit. They can be **listened** and **fired** by the target element
 
 The very basic implementation of events can be seen [here](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/blob/chapter-1/codes/basics-event.html).
 
-**NOTE :** You can also send data by creating an [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent), as demonstrated [here](ttps://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/blob/chapter-1/codes/data-driven-events.html)
+**NOTE :** You can also send data by creating an [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent), as demonstrated [here](https://github.com/tbhaxor/GUIDE-TO-ASYNC-CODE-IN-JS/blob/chapter-1/codes/data-driven-events.html)
 
 ## Callbacks / Listeners
 
